@@ -47,7 +47,7 @@ option(ENABLE_FRIBIDI "Enable FriBIDi support" ON)
 #server options
 set(SERVER_UID "" CACHE STRING "User id of the user who runs wesnothd")
 set(SERVER_GID "" CACHE STRING "Group id of the user who runs wesnothd")
-set(FIFO_DIR "/var/run/wesnothd" CACHE STRING "Directory for the wesnothd fifo socket file")
+set(FIFO_DIR "/run/wesnothd" CACHE STRING "Directory for the wesnothd fifo socket file")
 
 #build options
 option(ENABLE_GAME "Enable compilation of the game" ON)
