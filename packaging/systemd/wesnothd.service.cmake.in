@@ -1,0 +1,32 @@
+[Unit]
+Description=Wesnoth@BINARY_SUFFIX@ Multiplayer Server Daemon
+Documentation=man:wesnothd(6)
+After=network.target
+
+[Service]
+ExecStart=@CMAKE_INSTALL_PREFIX@/@BINDIR@/wesnothd@BINARY_SUFFIX@
+
+# Additional security-related features
+ProtectHome=yes
+ProtectSystem=full
+PrivateTmp=yes
+PrivateDevices=yes
+
+NoNewPrivileges=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+# needs v231
+RestrictRealtime=yes
+MemoryDenyWriteExecute=yes
+SystemCallArchitectures=native
+
+# needs v232
+ProtectControlGroups=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+
+# needs v233
+RestrictNamespaces=yes
+
+[Install]
+WantedBy=multi-user.target
