@@ -2,3 +2,6 @@ Import("env")
 
 env.ScanReplace("wesnothd.service", "wesnothd.service.scons.in")
 env.ScanReplace("wesnothd.conf", "wesnothd.tmpfiles.conf.in")
+
+#env.ScanReplace("#/packaging/systemd/wesnothd.service.scons.in")
+#env.ScanReplace("#/packaging/systemd/wesnothd.tmpfiles.conf.scons.in")
