@@ -2,13 +2,7 @@
 # Shamelessly stolen from scons wiki
 # http://www.scons.org/wiki/ReplacementBuilder
 
-try:
-    from string import Template
-
-    class PercentDelimitedTemplate(Template):
-        delimiter = "%"
-except ImportError:
-    pass
+from string import Template
 
 def replace_action(target, source, env):
     open(str(target[0]), 'w').write(PercentDelimitedTemplate(open(str(source[0]), 'r').read()).substitute(env))
