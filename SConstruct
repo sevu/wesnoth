@@ -786,12 +786,13 @@ if env["systemd"]:
     tmpfiles_dir = Popen("pkg-config --variable=tmpfiles_dir systemd", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip().lstrip("/")
     env.InstallData(None, "wesnothd", "#packaging/systemd/wesnothd.service", systemd_dir)
     env.InstallData(None, "wesnothd", "#packaging/systemd/wesnothd.conf", tmpfiles_dir)
-if not access(fifodir, F_OK):
+    Popen("systemd-tmpfiles --create --prefix $fifodir", shell=True)
+elif not access(fifodir, F_OK):
     fifodir = env.Command(fifodir, [], [
         Mkdir(fifodir),
         Chmod(fifodir, 0o700),
-        Action("chown %s:%s %s" %
-               (env["server_uid"], env["server_gid"], fifodir)),
+        Action("chown %s %s" % (env["server_uid"], fifodir)),
+        Action("chgrp %s %s" % (env["server_gid"], fifodir)),
         ])
     AlwaysBuild(fifodir)
     env.Alias("install-wesnothd", fifodir)
