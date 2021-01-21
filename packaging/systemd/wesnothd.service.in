@@ -9,7 +9,7 @@ After=network.target
 [Service]
 # If wesnothd is started from within the game it runs under a different user
 # Deleting the pipe resets owner, group and mode
-ExecStartPre=/bin/rm -f @FIFO_DIR@/socket
+ExecStartPre=@RM@ -f @FIFO_DIR@/socket
 
 ExecStart=@CMAKE_INSTALL_FULL_BINDIR@/wesnothd@BINARY_SUFFIX@ -t 2 -T 5
 # You can use -c to specify the same configuration file
@@ -17,9 +17,9 @@ ExecStart=@CMAKE_INSTALL_FULL_BINDIR@/wesnothd@BINARY_SUFFIX@ -t 2 -T 5
 # e.g. -c /home/user/.local/share/wesnoth/1.14/lan_server.cfg
 # (and make sure wesnothd has the required access permissions)
 
-ExecReload=/bin/kill -s SIGHUP $MAINPID
+ExecReload=@KILL@ -s SIGHUP $MAINPID
 
-ExecStopPost=/bin/rm -f @FIFO_DIR@/socket
+ExecStopPost=@RM@ -f @FIFO_DIR@/socket
 
 SyslogIdentifier=Wesnothd@BINARY_SUFFIX@
 WorkingDirectory=@FIFO_DIR@

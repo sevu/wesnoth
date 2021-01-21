@@ -1,9 +1,16 @@
 Import("env")
 
+from subprocess import Popen, PIPE
+
+rm = Popen("/usr/bin/which rm", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip()
+kill = Popen("/usr/bin/which kill ", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip()
+
 script_dict = {}
 script_dict["@CMAKE_INSTALL_FULL_BINDIR@"] = "$bindir"
 script_dict["@BINARY_SUFFIX@"] = "$program_suffix"
 script_dict["@FIFO_DIR@"] = "$fifodir"
+script_dict["@RM@"] = rm
+script_dict["@KILL@"] = kill
 
 env.Substfile(dest="wesnothd.service", source="wesnothd.service.in", SUBST_DICT=script_dict)
 env.Substfile(dest="wesnothd.conf", source="wesnothd.conf.in", SUBST_DICT=script_dict)
