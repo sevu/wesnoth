@@ -1,6 +1,15 @@
 Import("env")
 
+import pwd, grp
 from subprocess import Popen, PIPE
+
+try:
+    USER_NAME=pwd.getpwuid( int(env["server_uid"]) ).pw_name
+    GROUP_NAME=grp.getgrgid( int(env["server_gid"]) ).gr_name
+except ValueError:
+    USER_NAME="nobody"
+    GROUP_NAME="users"
+    # GROUP_NAME=grp.getgrgid( pwd.getpwnam("nobody").pw_gid ).gr_name
 
 rm = Popen("/usr/bin/which rm", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip()
 kill = Popen("/usr/bin/which kill ", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip()
@@ -12,5 +21,6 @@ script_dict["@FIFO_DIR@"] = "$fifodir"
 script_dict["@RM@"] = rm
 script_dict["@KILL@"] = kill
 
+# FIXME: does not work if dest and source differ in more than the .in suffix
 env.Substfile(dest="wesnothd.service", source="wesnothd.service.in", SUBST_DICT=script_dict)
 env.Substfile(dest="wesnothd.conf", source="wesnothd.conf.in", SUBST_DICT=script_dict)

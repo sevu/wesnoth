@@ -780,6 +780,8 @@ env.InstallData("python_site_packages_dir", "pytools", [os.path.join("data", "to
 env.InstallBinary(wesnothd)
 InstallManpages(env, "wesnothd")
 if env["systemd"]:
+    # FIXME: There must be a better way;
+    #        it does not work when placing the generated file in $builddir.
     Depends("wesnothd", "#packaging/systemd/wesnothd.service")
     Depends("wesnothd", "#packaging/systemd/wesnothd.conf")
     systemd_dir = Popen("pkg-config --variable=systemd_system_unit_dir systemd", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip().lstrip("/")
@@ -794,6 +796,7 @@ elif not access(fifodir, F_OK):
         Action("chown %s %s" % (env["server_uid"], fifodir)),
         Action("chgrp %s %s" % (env["server_gid"], fifodir)),
         ])
+    # FIXME: Add check for uid/gid or give default values nobody/users
     AlwaysBuild(fifodir)
     env.Alias("install-wesnothd", fifodir)
 
