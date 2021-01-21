@@ -567,11 +567,14 @@ endif()
 #
 if(ENABLE_DESKTOP_ENTRY AND ENABLE_GAME)
 	install(FILES packaging/org.wesnoth.Wesnoth.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications )
-	install(DIRECTORY packaging/icons/hicolor packaging/icons/HighContrast DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons )
 endif()
 
 if(ENABLE_APPDATA_FILE AND ENABLE_GAME)
 	install(FILES packaging/org.wesnoth.Wesnoth.appdata.xml DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo )
+endif()
+
+if((ENABLE_DESKTOP_ENTRY OR ENABLE_APPDATA_FILE) AND ENABLE_GAME)
+	install(DIRECTORY packaging/icons/hicolor DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons )
 endif()
 
 if(ENABLE_SERVER AND FIFO_DIR)
