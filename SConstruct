@@ -64,7 +64,6 @@ opts.AddVariables(
     PathVariable('bindir', 'Where to install binaries', "bin", PathVariable.PathAccept),
     ('cachedir', 'Directory that contains a cache of derived files.', ''),
     PathVariable('datadir', 'read-only architecture-independent game data', "$datarootdir/$datadirname", PathVariable.PathAccept),
-    PathVariable('fifodir', 'directory for the wesnothd fifo socket file', "/run/wesnothd", PathVariable.PathAccept),
     BoolVariable('desktop_entry','Clear to disable desktop-entry', True),
     BoolVariable('appdata_file','Clear to not install appdata file', True),
     BoolVariable('systemd','Install systemd unit file for wesnothd', bool(WhereIs("systemd"))),
@@ -116,6 +115,11 @@ opts.AddVariables(
     BoolVariable("OS_ENV", "Forward the entire OS environment to scons", False),
     BoolVariable("history", "Clear to disable GNU history support in lua console", True)
     )
+
+if "linux" in sys.platform:
+    opts.Add(PathVariable('fifodir', 'directory for the wesnothd fifo socket file', "/run/wesnothd", PathVariable.PathAccept))
+else:
+    opts.Add(PathVariable('fifodir', 'directory for the wesnothd fifo socket file', "/var/run/wesnothd", PathVariable.PathAccept))
 
 #
 # Setup
