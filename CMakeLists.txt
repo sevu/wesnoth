@@ -186,7 +186,6 @@ if(UNIX AND NOT APPLE AND NOT CYGWIN)
 endif(UNIX AND NOT APPLE AND NOT CYGWIN)
 
 set(BINARY_SUFFIX "" CACHE STRING "Suffix behind all binaries")
-set(BINARY_PREFIX "" CACHE STRING "Prefix in front of all binaries")
 
 #
 # Handle options (set paths/definitions/etc...)
