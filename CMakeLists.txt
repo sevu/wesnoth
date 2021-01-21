@@ -531,8 +531,13 @@ if(ENABLE_GAME OR ENABLE_TESTS)
 	pkg_check_modules(CAIRO REQUIRED cairo>=1.10)
 	pkg_check_modules(PANGOCAIRO REQUIRED pangocairo>=1.22.0)
 	pkg_check_modules(FONTCONFIG REQUIRED fontconfig>=2.4.1)
-	pkg_check_modules(SYSTEMD systemd)
 endif(ENABLE_GAME OR ENABLE_TESTS)
+
+if(ENABLE_SERVER)
+	pkg_check_modules(SYSTEMD systemd)
+	pkg_get_variable(SYSTEMD_DIR systemd systemd_system_unit_dir)
+	pkg_get_variable(TMPFILES_DIR systemd tmpfiles_dir)
+endif(ENABLE_SERVER)
 
 if(ENABLE_TESTS)
 	find_package( Boost ${BOOST_VERSION} REQUIRED COMPONENTS unit_test_framework )
@@ -625,6 +630,13 @@ if(ENABLE_SERVER AND FIFO_DIR)
 	if(SERVER_UID AND SERVER_GID)
 		install(CODE "execute_process(COMMAND chown ${SERVER_UID}:${SERVER_GID} \$ENV{DESTDIR}/${FIFO_DIR})")
 	endif()
+endif()
+
+if (ENABLE_SERVER AND SYSTEMD_FOUND)
+        configure_file(packaging/systemd/wesnothd.conf.in ${CMAKE_BINARY_DIR}/wesnothd.conf)
+        configure_file(packaging/systemd/wesnothd.service.in ${CMAKE_BINARY_DIR}/wesnothd.service)
+        install(FILES ${CMAKE_BINARY_DIR}/wesnothd.conf DESTINATION ${TMPFILES_DIR})
+        install(FILES ${CMAKE_BINARY_DIR}/wesnothd.service DESTINATION ${SYSTEMD_DIR})
 endif()
 
 #

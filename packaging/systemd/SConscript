@@ -1,4 +1,9 @@
 Import("env")
 
-env.ScanReplace("wesnothd.service", "wesnothd.service.scons.in")
-env.ScanReplace("wesnothd.conf", "wesnothd.tmpfiles.conf.in")
+script_dict = {}
+script_dict["@CMAKE_INSTALL_FULL_BINDIR@"] = "$bindir"
+script_dict["@BINARY_SUFFIX@"] = "$program_suffix"
+script_dict["@FIFO_DIR@"] = "$fifodir"
+
+env.Substfile(dest="wesnothd.service", source="wesnothd.service.in", SUBST_DICT=script_dict)
+env.Substfile(dest="wesnothd.conf", source="wesnothd.conf.in", SUBST_DICT=script_dict)
