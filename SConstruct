@@ -765,10 +765,12 @@ if env["nls"]:
     env.InstallData("localedir", "wesnoth", Dir("translations"), copy_filter = MoFileFilter)
 InstallManpages(env, "wesnoth")
 if have_client_prereqs and have_X and env["desktop_entry"]:
-     env.InstallData("icondir", "wesnoth", "packaging/icons")
      env.InstallData("desktopdir", "wesnoth", "packaging/org.wesnoth.Wesnoth.desktop")
 if have_client_prereqs and "linux" in sys.platform and env["appdata_file"]:
      env.InstallData("appdatadir", "wesnoth", "packaging/org.wesnoth.Wesnoth.appdata.xml")
+if have_client_prereqs and (have_X and env["desktop_entry"] or "linux" in sys.platform and env["appdata_file"]):
+     env.InstallData("icondir", "wesnoth", "packaging/icons")
+
 
 # Python tools
 env.InstallData("bindir", "pytools", [os.path.join("data", "tools", tool) for tool in pythontools])
