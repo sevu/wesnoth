@@ -66,7 +66,10 @@ def InstallBinary(env, source):
     )
 
 def InstallData(env, datadir, component, source, subdir = "", **kwargs):
-    installdir = Dir(env.subst(os.path.join(env["destdir"], env[datadir].lstrip("/"), subdir)))
+    if datadir:
+        installdir = Dir(env.subst(os.path.join(env["destdir"], env[datadir].lstrip("/"), subdir)))
+    else:
+        installdir = Dir(env.subst(os.path.join(env["destdir"], subdir)))
     sources = map(Entry, Flatten([source]))
     dirs = []
     for source in sources:

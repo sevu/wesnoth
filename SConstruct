@@ -7,7 +7,7 @@
 # 2. msgfmt(1) for making builds with i18n support.
 # 3. graph-includes for making the project dependency graph.
 
-EnsureSConsVersion(0,98,3)
+EnsureSConsVersion(1,3,0)
 
 import os, sys, shutil, re, subprocess
 from glob import glob
@@ -66,7 +66,7 @@ opts.AddVariables(
     PathVariable('datadir', 'read-only architecture-independent game data', "$datarootdir/$datadirname", PathVariable.PathAccept),
     BoolVariable('desktop_entry','Clear to disable desktop-entry', True),
     BoolVariable('appdata_file','Clear to not install appdata file', True),
-    BoolVariable('systemd','Install systemd unit file for wesnothd', bool(WhereIs("systemd"))),
+    BoolVariable('systemd','Install systemd unit file for wesnothd', bool(WhereIs("systemd-tmpfiles"))),
     PathVariable('datarootdir', 'sets the root of data directories to a non-default location', "share", PathVariable.PathAccept),
     PathVariable('datadirname', 'sets the name of data directory', "wesnoth$version_suffix", PathVariable.PathAccept),
     PathVariable('desktopdir', 'sets the desktop entry directory to a non-default location', "$datarootdir/applications", PathVariable.PathAccept),
@@ -132,7 +132,7 @@ for repo in Dir(".").repositories:
   # source code root and supplying this path with -Y option.
   toolpath.append(repo.abspath + "/scons")
 sys.path = toolpath + sys.path
-env = Environment(tools=["tar", "gettext_tool", "install", "scanreplace"], options = opts, toolpath = toolpath)
+env = Environment(tools=["tar", "gettext_tool", "install", "scanreplace", "default"], options = opts, toolpath = toolpath)
 
 if env["lockfile"]:
     print("Creating lockfile")
@@ -764,6 +764,13 @@ env.InstallData("python_site_packages_dir", "pytools", [os.path.join("data", "to
 # Wesnoth MP server install
 env.InstallBinary(wesnothd)
 InstallManpages(env, "wesnothd")
+if env["systemd"]:
+    Depends("wesnothd", "#packaging/systemd/wesnothd.service")
+    Depends("wesnothd", "#packaging/systemd/wesnothd.conf")
+    systemd_dir = Popen("pkg-config --variable=systemd_system_unit_dir systemd", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip().lstrip("/")
+    tmpfiles_dir = Popen("pkg-config --variable=tmpfiles_dir systemd", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip().lstrip("/")
+    env.InstallData(None, "wesnothd", "#packaging/systemd/wesnothd.service", systemd_dir)
+    env.InstallData(None, "wesnothd", "#packaging/systemd/wesnothd.conf", tmpfiles_dir)
 if not access(fifodir, F_OK):
     fifodir = env.Command(fifodir, [], [
         Mkdir(fifodir),
@@ -773,9 +780,6 @@ if not access(fifodir, F_OK):
         ])
     AlwaysBuild(fifodir)
     env.Alias("install-wesnothd", fifodir)
-if env["systemd"]:
-    env.InstallData("prefix", "wesnothd", "#packaging/systemd/wesnothd.service", "lib/systemd/system")
-    env.InstallData("prefix", "wesnothd", "#packaging/systemd/wesnothd.conf", "lib/tmpfiles.d")
 
 # Wesnoth campaign server
 env.InstallBinary(campaignd)
