@@ -285,12 +285,11 @@ msgstr ""
 "macht, zwei Stunden später aber nicht mehr! Ich werde diesem Ort und seinen "
 "Beschränkungen der Gedanken überdrüssig. Also keine braunen Novizenroben "
 "mehr, keine weitere Verhöhnung wegen meiner Haare, keine wichtigtuerischen "
-"Lehrer mehr. Ich werde mir selbst die sogenannte »Schwarze Magie« "
-"beibringen und lernen, wie ich ewig leben kann! Die Alten der grünen Insel "
-"haben einen Weg gefunden, also kann ich ihn auch finden. Wenn all diese "
-"Alten hier ihren letzten Atemzug tun, werden sie mich schon um das Geheimnis "
-"anflehen müssen. Vielleicht werde ich mich großzügig zeigen. Vielleicht "
-"nicht."
+"Lehrer mehr. Ich werde mir selbst die sogenannte »Schwarze Magie« beibringen "
+"und lernen, wie ich ewig leben kann! Die Alten der grünen Insel haben einen "
+"Weg gefunden, also kann ich ihn auch finden. Wenn all diese Alten hier ihren "
+"letzten Atemzug tun, werden sie mich schon um das Geheimnis anflehen müssen. "
+"Vielleicht werde ich mich großzügig zeigen. Vielleicht nicht."
 
 #. [objective]: condition=win
 #: data/campaigns/Secrets_of_the_Ancients/scenarios/01_Slipping_Away.cfg:175
@@ -4865,12 +4864,12 @@ msgstr "Fliegende Leiche (Fledermaus)"
 #. [value]: type=SotA Flying Corpse_Bat
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:25
 msgid "You can now raise bat corpses!"
-msgstr "Ihr könnt jetzt Fledermaus-Leichen auferwecken"
+msgstr "Ihr könnt jetzt Fledermaus-Leichen auferwecken!"
 
 #. [value]: type=SotA Walking Corpse_Rat
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:30
 msgid "recruit^Walking Corpse (Rat)"
-msgstr "Erwecke Wandelnde Leiche (Ratte)"
+msgstr "Wandelnde Leiche (Ratte)"
 
 #. [value]: type=SotA Walking Corpse_Rat
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:31
@@ -4880,7 +4879,7 @@ msgstr "Ihr könnt jetzt Ratten-Leichen auferwecken!"
 #. [value]: type=SotA Walking Corpse_Wolf
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:36
 msgid "recruit^Walking Corpse (Wolf)"
-msgstr "Erwecke Wandelnde Leiche (Wolf)"
+msgstr "Wandelnde Leiche (Wolf)"
 
 #. [value]: type=SotA Walking Corpse_Wolf
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:37
@@ -4890,7 +4889,7 @@ msgstr "Ihr könnt jetzt Wolf-Leichen auferwecken!"
 #. [value]: type=SotA Walking Corpse_Human
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:42
 msgid "recruit^Walking Corpse (Human)"
-msgstr "Erwecke Wandelnde Leiche (Mensch)"
+msgstr "Wandelnde Leiche (Mensch)"
 
 #. [value]: type=SotA Walking Corpse_Human
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:43
@@ -4901,7 +4900,7 @@ msgstr "Ihr könnt jetzt Menschen-Leichen auferwecken!"
 #. the mount is an undead horse (not a wolf), this is shown instead of the unit_type name in the recruitment dialog
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:49
 msgid "recruit^Walking Corpse (Mounted)"
-msgstr "Erwecke Wandelnde Leiche (Beritten)"
+msgstr "Wandelnde Leiche (Beritten)"
 
 #. [value]: type=SotA Walking Corpse_Mounted
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:50
@@ -4911,7 +4910,7 @@ msgstr "Ihr könnt jetzt berittene Leichen auferwecken!"
 #. [value]: type=SotA Walking Corpse_Wolf Rider
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:55
 msgid "recruit^Walking Corpse (Wolf Rider)"
-msgstr "Erwecke Wandelnde Leiche (Wolfsreiter)"
+msgstr "Wandelnde Leiche (Wolfsreiter)"
 
 #. [value]: type=SotA Walking Corpse_Wolf Rider
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:56
@@ -4943,7 +4942,7 @@ msgstr "Ihr könnt jetzt Saurianer-Leichen auferwecken!"
 #. [value]: type=SotA Walking Corpse_Wose
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:75
 msgid "recruit^Walking Corpse (Wose)"
-msgstr "Erwecke Wandelnde Leiche (Waldschrat)"
+msgstr "Wandelnde Leiche (Waldschrat)"
 
 #. [value]: type=SotA Walking Corpse_Wose
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:76
@@ -4953,7 +4952,7 @@ msgstr "Ihr könnt jetzt Wolfreiter-Leichen auferwecken!"
 #. [value]: type=SotA Walking Corpse_Goblin
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:81
 msgid "recruit^Walking Corpse (Goblin)"
-msgstr "Erwecke Wandelnde Leiche (Kobold)"
+msgstr "Wandelnde Leiche (Kobold)"
 
 #. [value]: type=SotA Walking Corpse_Goblin
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:82
@@ -4973,7 +4972,7 @@ msgstr "Ihr könnt jetzt Greifen-Leichen auferwecken!"
 #. [value]: type=SotA Walking Corpse_Spider
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:93
 msgid "recruit^Walking Corpse (Spider)"
-msgstr "Erwecke Wandelnde Leiche (Spinne)"
+msgstr "Wandelnde Leiche (Spinne)"
 
 #. [value]: type=SotA Walking Corpse_Spider
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:94
@@ -4983,7 +4982,7 @@ msgstr "Ihr könnt jetzt Spinnen-Leichen auferwecken!"
 #. [value]: type=SotA Walking Corpse_Troll
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:99
 msgid "recruit^Walking Corpse (Troll)"
-msgstr "Erwecke Wandelnde Leiche (Troll)"
+msgstr "Wandelnde Leiche (Troll)"
 
 #. [value]: type=SotA Walking Corpse_Troll
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:100
@@ -4993,7 +4992,7 @@ msgstr "Ihr könnt jetzt Troll-Leichen auferwecken!"
 #. [value]: type=SotA Walking Corpse_Dwarf
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:105
 msgid "recruit^Walking Corpse (Dwarf)"
-msgstr "Erwecke Wandelnde Leiche (Zwerg)"
+msgstr "Wandelnde Leiche (Zwerg)"
 
 #. [value]: type=SotA Walking Corpse_Dwarf
 #: data/campaigns/Secrets_of_the_Ancients/utils/zombie-utils.cfg:106
