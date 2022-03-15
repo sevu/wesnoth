@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: Battle for Wesnoth 1.14\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2022-01-17 23:52+0300\n"
-"PO-Revision-Date: 2022-03-15 16:27+0100\n"
+"PO-Revision-Date: 2022-03-15 16:42+0100\n"
 "Last-Translator: Aaron Winter <winter.aaron93@gmail.com>\n"
 "Language-Team: irc://irc.libera.chat/#wesnoth-de\n"
 "Language: de_DE\n"
@@ -5205,8 +5205,8 @@ msgstr "Entfernt den Spieler von Eurer Liste"
 #: data/gui/window/preferences/05_multiplayer.cfg:311
 msgid "You have not befriended or blocked any other players."
 msgstr ""
-"Ihr habt Euch noch nicht mit anderen Spielern angefreundet oder ignoriert "
-"sie."
+"Ihr habt Euch noch keine anderen Spielern als Freunde hinzugefügt oder "
+"blockiert."
 
 #. [button]: id=open
 #: data/gui/window/screenshot_notification.cfg:49
