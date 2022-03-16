@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Battle for Wesnoth 1.12\n"
 "Report-Msgid-Bugs-To: https://bugs.wesnoth.org/\n"
 "POT-Creation-Date: 2022-01-02 18:01 UTC\n"
-"PO-Revision-Date: 2022-01-16 19:18+0100\n"
+"PO-Revision-Date: 2022-03-16 14:15+0100\n"
 "Last-Translator: Crommy\n"
 "Language-Team: irc://irc.libera.chat/#wesnoth-de\n"
 "Language: de_DE\n"
@@ -286,6 +286,9 @@ msgid ""
 "Moving a dwarf to a rune chest beside the keep opens a dialog for obtaining "
 "temporary upgrades which last until the end of the scenario."
 msgstr ""
+"Wenn Ihr einen Zwerg auf eine der Runenkiste neben der Zwergenfestung bewegt "
+"erhaltet ihr die Möglichkeit, ein temporäres Upgrade auszuwählen, welches "
+"bis zum Ende des Szenarios anhält."
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/1_A_Bargain_is_Struck.cfg:306
@@ -795,6 +798,9 @@ msgid ""
 "Moving a dwarf to a rune chest north of the keep opens a dialog for "
 "obtaining temporary upgrades which last until the end of the scenario."
 msgstr ""
+"Wenn Ihr einen Zwerg auf eine der Runenkiste im Norden bewegt erhaltet ihr "
+"die Möglichkeit, ein temporäres Upgrade auszuwählen, welches bis zum Ende "
+"des Szenarios anhält."
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/2_Closing_the_Gates.cfg:278
@@ -1391,6 +1397,8 @@ msgid ""
 "What about that time the mines of North Knalga were invaded by ancient-"
 "looking undead liches?"
 msgstr ""
+"Was ist mit damals, als die Minen in Nord-Knalga von uralt-untoten Lichs "
+"heimgesucht wurden?"
 
 #. [message]: speaker=Durstorn
 #: data/campaigns/Sceptre_of_Fire/scenarios/2t_In_the_Dwarven_City.cfg:164
@@ -1398,6 +1406,8 @@ msgid ""
 "Ye had to bring that up now lad?! Speak not about the undead, lest ye summon "
 "them upon us."
 msgstr ""
+"Was erwähnst du jetzt die Untoten, Junge?! Über die reden wir nicht! Nicht, "
+"dass sie sonst noch angelaufen kommen."
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/scenarios/2t_In_the_Dwarven_City.cfg:173
@@ -2267,7 +2277,7 @@ msgstr "Bringen 1 Ladung Gold und 2 Ladungen Kohle zu Ihren Burgfried"
 #. [note]
 #: data/campaigns/Sceptre_of_Fire/scenarios/4_Gathering_Materials.cfg:660
 msgid "Dwarvish Miners can pick up and carry gold and coal."
-msgstr ""
+msgstr "Zwergische Bergarbeiter können Gold und Kohle aufheben und tragen."
 
 #. [label]
 #: data/campaigns/Sceptre_of_Fire/scenarios/4_Gathering_Materials.cfg:676
@@ -3473,7 +3483,7 @@ msgstr "Erreicht den Außenposten von Wesnoth im Süden"
 #. [label]
 #: data/campaigns/Sceptre_of_Fire/scenarios/7_Outriding_the_Outriders.cfg:115
 msgid "Wesnothian Outpost"
-msgstr ""
+msgstr "Außenposten von Wesnoth"
 
 #. [message]: speaker=Alanin
 #: data/campaigns/Sceptre_of_Fire/scenarios/7_Outriding_the_Outriders.cfg:123
@@ -4975,7 +4985,7 @@ msgstr "Steinboden"
 #. [terrain_type]: id=sof_ancient_stone_floor
 #: data/campaigns/Sceptre_of_Fire/utils/terrain.cfg:7
 msgid "Ancient Stone Floor"
-msgstr "uralter Steinboden"
+msgstr "Uralter Steinboden"
 
 #. [message]: speaker=Rugnur
 #: data/campaigns/Sceptre_of_Fire/utils/utils.cfg:22
@@ -5004,6 +5014,9 @@ msgid ""
 "adjacent dwarf opens a dialog for obtaining temporary upgrades which last "
 "until the end of the scenario."
 msgstr ""
+"Runenmeister Thursagan: Während Thursagan auf einem Burgfried steht könnt "
+"ihr Zwerge, welche neben ihm stehen, auswählen, um ihnen ein temporäres "
+"Upgrade zu verleihen, welches bis zum Ende des Szenarios anhält."
 
 #~ msgid ""
 #~ "Bring the necessary gold and coal to create the sceptre to the starting "
